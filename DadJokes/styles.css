@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+}
+
+.pop-up-container {
+  display: flex;
+  justify-content: center;
+}
+
+.pop-up {
+  position: absolute;
+  top: 2%;
+  background-color: #52b788;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 7px;
+  text-align: center;
+  user-select: none;
+  display: none;
+}
+
+.pop-up.active {
+  animation: slide-in-from-top 0.5s ease-out;
+}
+
+.pop-up.exit {
+  animation: slide-out-to-top 0.5s ease-out forwards;
+}
+
+@keyframes slide-in-from-top {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-out-to-top {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+.active {
+  display: block;
+}
+
+.container {
+  padding: 0 50px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container div {
+  display: flex;
+}
+
+.container button:nth-of-type(1) {
+  padding: 10px 20px;
+  border-radius: 7px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: #52b788;
+  color: #fff;
+  font-weight: 700;
+  transition: 0.1s all;
+  font-size: 1em;
+  user-select: none;
+}
+
+.container button:nth-of-type(2) {
+  padding: 8px 10px;
+  border-radius: 7px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: #40916c;
+  color: #fff;
+  font-weight: 700;
+  transition: 0.1s all;
+  font-size: 1em;
+  user-select: none;
+  transform: translateX(-10px);
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.container button:hover {
+  background-color: #2d6a4f;
+}
+
+.container p {
+  max-width: 600px;
+  text-align: center;
+  color: #596066;
+  margin: 20px 0;
+  font-size: 1.2em;
+}
+
+.container h1 {
+  text-align: center;
+  font-size: 2.3em;
+  user-select: none;
+}
